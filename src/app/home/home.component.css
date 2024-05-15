@@ -28,6 +28,10 @@
   font-size: 18px;
 }
 
+.required-color {
+  color: red;
+}
+
 .input {
   width: 100%;
   height: 50px;
