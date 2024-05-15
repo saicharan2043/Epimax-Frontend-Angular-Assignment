@@ -1,0 +1,103 @@
+<div class="bg-container">
+  <app-navbar></app-navbar>
+  <div class="todo-list-and-form-container">
+    <form class="form-container">
+      <label class="label">Title</label>
+      <input
+        type="text"
+        placeholder=""
+        class="input"
+        [(ngModel)]="title"
+        name="title"
+      />
+      <label class="label">Description</label>
+      <input
+        type="text"
+        placeholder=""
+        class="input"
+        [(ngModel)]="description"
+        name="description"
+      />
+      <label class="label">Category</label>
+      <div class="horizanral-container">
+        <select class="select" [(ngModel)]="category" name="category">
+          <option value="Work">Work</option>
+          <option value="Study">Study</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Family">Family</option>
+        </select>
+        <button class="add-btn" type="button" (click)="addTodo()">Add</button>
+      </div>
+    </form>
+
+    <ul class="ul-list-of-todo">
+      <li class="list" *ngFor="let todo of TodoList">
+        <div class="heading-and-description-container">
+          <h1 class="heading-of-list">{{ todo.title }}</h1>
+          <p class="description-of-list">{{ todo.description }}</p>
+          <p class="description-of-list">{{ todo.category }}</p>
+        </div>
+        <div class="horizanral-for-delete-edit-checkbox">
+          <i
+            class="fa-solid fa-trash delete-edit-icon"
+            (click)="deleteTodo(todo.id)"
+          ></i>
+          <input
+            type="checkbox"
+            class="check-box"
+            [checked]="todo.status"
+            (click)="updateStatus(todo)"
+          />
+        </div>
+      </li>
+
+      <!-- <li class="list">
+        <div class="heading-and-description-container">
+          <h1 class="heading-of-list">Title</h1>
+          <p class="description-of-list">Description</p>
+        </div>
+        <div class="horizanral-for-delete-edit-checkbox">
+          <i class="fa-solid fa-pen-to-square delete-edit-icon"></i>
+          <i class="fa-solid fa-trash delete-edit-icon"></i>
+          <input type="checkbox" class="check-box" />
+        </div>
+      </li>
+
+      <li class="list">
+        <div class="heading-and-description-container">
+          <h1 class="heading-of-list">Title</h1>
+          <p class="description-of-list">Description</p>
+        </div>
+        <div class="horizanral-for-delete-edit-checkbox">
+          <i class="fa-solid fa-pen-to-square delete-edit-icon"></i>
+          <i class="fa-solid fa-trash delete-edit-icon"></i>
+          <input type="checkbox" class="check-box" />
+        </div>
+      </li>
+
+      <li class="list">
+        <div class="heading-and-description-container">
+          <h1 class="heading-of-list">Title</h1>
+          <p class="description-of-list">Description</p>
+        </div>
+        <div class="horizanral-for-delete-edit-checkbox">
+          <i class="fa-solid fa-pen-to-square delete-edit-icon"></i>
+          <i class="fa-solid fa-trash delete-edit-icon"></i>
+          <input type="checkbox" class="check-box" />
+        </div>
+      </li>
+
+      <li class="list">
+        <div class="heading-and-description-container">
+          <h1 class="heading-of-list">Title</h1>
+          <p class="description-of-list">Description</p>
+        </div>
+        <div class="horizanral-for-delete-edit-checkbox">
+          <i class="fa-solid fa-pen-to-square delete-edit-icon"></i>
+          <i class="fa-solid fa-trash delete-edit-icon"></i>
+          <input type="checkbox" class="check-box" />
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</div>

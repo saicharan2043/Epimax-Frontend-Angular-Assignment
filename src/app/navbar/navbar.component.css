@@ -1,0 +1,14 @@
+nav {
+  width: 100vw;
+  height: 10vh;
+  background-color: #ffffff;
+  padding: 10px 50px;
+  margin-bottom: 60px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.heading {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 25px;
+  color: black;
+}
